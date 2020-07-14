@@ -1,0 +1,13 @@
+# Used for production propose
+# Production-Override compose configuration
+# Defines our composer file version
+version: "3"
+# Define our services 
+services: 
+  # This is our nodejs app built using the Dockerfile
+  app:
+    # Restarts our node app whenever it fails
+    restart: always
+    # Environment file we created
+    env_file:
+      - environment/prod.env

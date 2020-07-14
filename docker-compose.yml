@@ -1,0 +1,20 @@
+# base compose configuration
+# Defines our composer file version
+version: "3"
+# Define our services 
+services: 
+  # This is our nodejs app built using the Dockerfile
+  app:
+    # The name of our node app container
+    container_name: ${COMPOSE_PROJECT_NAME}
+    # Builds the node app docker container from the local - Docker file we created
+    build: .
+    # Environment file we created
+    env_file:
+      - ./.env
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules # Remove this if you have pure JS dependencies
+    # Exposes the necessary ports that our node app uses
+    ports:
+      - "3000:3000"
