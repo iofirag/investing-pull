@@ -5,6 +5,7 @@ export const IndiceLogRouter: Router = Router()
   // put here new api's
   .get("/test", cont.test)
   .get('/getIndiceLogList', cont.getIndiceLogList)
+  .get('/getAllIndiceLogByIndiceName', cont.getAllIndiceLogByIndiceName)
 
   // Bulk actions
   .get('/getAll', cont.getAll)
